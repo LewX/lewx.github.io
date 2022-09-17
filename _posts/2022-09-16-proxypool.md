@@ -13,6 +13,8 @@ author: lewx
 docker run -p 6379:6379 --name redis -v /Users/lewx/Desktop/Project/redis/redis.conf:/etc/redis/redis.conf -v /Users/lewx/Desktop/Project/redis/data:/data -d redis redis-server /etc/redis/redis.conf
 ```
 
+<!-- more -->
+
 **说明**
 
 - 将本地`/Users/lewx/Desktop/Project/redis/redis.conf`挂载到容器`/etc/redis/redis.conf`
