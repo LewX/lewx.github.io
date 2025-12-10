@@ -316,41 +316,43 @@ img {
 
 //
 // .sidebar
+//  Desktop: act as a top header bar instead of a fixed left sidebar
 //
 
 .wrapper-sidebar {
-  width: 30%;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-color: $background-color;
-	height: 100%;
-	top: 0;
-	left:0;
-	position: fixed;
-	z-index: 4;
-  border-right: 1px solid $divider-color;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  border-bottom: 1px solid $divider-color;
+  background-color: $background-color;
 
   @include mobile {
     width: 100%;
     height: auto;
-    padding-bottom: 24px;
+    padding-bottom: 16px;
     position: relative;
     border-bottom: 1px solid $divider-color;
-    border-right: 0;
   }
 }
 
 .sidebar {
-  padding: 20px 0;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @include mobile {
+    flex-direction: column;
     text-align: center;
   }
 }
 
+
 .site-info {
-  text-align:center;
-  margin: 100px auto 0;
+  text-align:left;
+  margin: 0;
 
   @include mobile {
     float: none;
@@ -359,10 +361,10 @@ img {
   }
 
   .site-avatar {
-    margin:0 auto;
+  margin:0;
     display: block;
-    max-width: 200px;
-    max-height: 200px;
+  max-width: 120px;
+  max-height: 120px;
 
     @include mobile {
       max-width: 120px;
@@ -377,19 +379,19 @@ img {
 }
 
 .site-name {
-  margin: 0 auto;
+  margin: 0;
   color: $base-color;
   cursor: pointer;
   font-family: $base-font;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 1px;
 }
 
 .site-description {
-  margin: 15px auto;
+  margin: 2px 0 0 0;
   color: $base-lighten-color;
-  font-size: 16px;
+  font-size: 14px;
 
   @include mobile {
     margin: 10px auto;
@@ -397,15 +399,16 @@ img {
 }
 
 .navlist{
-  text-align:center;
+  text-align:right;
+  padding: 0 20px 12px 20px;
 }
 
 nav {
   display: block;
-  margin-top: 23px; // @TODO: Vertically middle align
+  margin-top: 0; // aligned in header bar
   font-family: $base-font;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
 
   @include mobile {
     margin-top: 9px;
